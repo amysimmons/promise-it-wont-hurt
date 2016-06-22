@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 'use strict';
+require('es6-promise');
 
 var workshopper = require('@timothygu/workshopper');
 var path = require('path');
