@@ -41,17 +41,11 @@ this.
 
 var promise = new Promise(function (fulfill, reject) {
   fulfill('I FIRED')
-  reject('I DID NOT FIRE')
+  reject(new Error('I DID NOT FIRE'))
 });
 
 var onRejected = function(err){
-  console.log(err)
+  console.log(err.message)
 }
 
-promise.then(
-  (str) => {
-    console.log(str)
-  },
-  onRejected
-)
-
+promise.then(console.log,onRejected)
